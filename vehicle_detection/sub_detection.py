@@ -12,11 +12,10 @@ class SubDetection:
         self.graph_path = os.path.join(CUR_DIR, 'utils', 'frcnn_inception_v2_graph.pbtxt')
         self.output_dir = OUTPUT_DIR
 
-    def detect_cars_image(self, frame_path, idx):
+    def detect_cars_image(self, frame, idx):
 
         cvNet = cv2.dnn.readNetFromTensorflow(self.model_path, self.graph_path)
 
-        frame = cv2.imread(frame_path)
         frame_height = frame.shape[0]
         frame_width = frame.shape[1]
         cvNet.setInput(cv2.dnn.blobFromImage(frame, size=(300, 300), swapRB=True, crop=False))

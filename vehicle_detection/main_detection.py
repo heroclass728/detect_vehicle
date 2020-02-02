@@ -1,5 +1,6 @@
 import os
 import glob
+import cv2
 
 from settings import INPUT_DIR
 from vehicle_detection.sub_detection import SubDetection
@@ -18,4 +19,5 @@ class MainDetection:
         index = 0
         for vehicle_image_path in vehicle_image_paths:
 
-            index = self.sub_detection.detect_cars_image(frame_path=vehicle_image_path, idx=index)
+            frame = cv2.imread(vehicle_image_path)
+            index = self.sub_detection.detect_cars_image(frame=frame, idx=index)
