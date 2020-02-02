@@ -37,7 +37,6 @@ def collect_training_images():
         shutil.copy(image_path, new_file_path)
 
 
-
 if __name__ == '__main__':
 
     collect_training_images()
