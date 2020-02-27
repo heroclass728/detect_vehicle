@@ -5,6 +5,7 @@ from utils.folder_file_managment import make_directory_if_not_exists
 CUR_DIR = os.path.dirname(os.path.abspath(__file__))
 INPUT_DIR = make_directory_if_not_exists(os.path.join(CUR_DIR, 'input'))
 OUTPUT_DIR = make_directory_if_not_exists(os.path.join(CUR_DIR, 'output'))
+VIDEO = True
 IMAGE_MAX_WIDTH = 800
 IMAGE_MAX_HEIGHT = 600
 VEHICLE_LABEL = [2, 5, 7]
